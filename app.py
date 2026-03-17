@@ -5,13 +5,7 @@ import plotly.express as px
 ruta = 'https://github.com/juliandariogiraldoocampo/ia_taltech/raw/refs/heads/main/aeropuerto/operaciones_aereas_acumuladas.csv'
 df = pd.read_csv(ruta)
 
-st.set_page_config(layout="wide")
 
-load_css("styles.css") 
-
-def load_css(file_name):
-    with open(file_name) as f:
-        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
 ###############################################################################
 #                             ANÁLISIS Y PROCESAMIENTO                        #
