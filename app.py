@@ -116,7 +116,7 @@ with tab2:
         title='TOP 10 RUTAS',
         labels={'CANTIDAD': 'Cantidad de Operaciones', 'RUTA': 'Rutas'},
         color='CANTIDAD',
-        color_continuous_scale='plasma'
+        color_continuous_scale='inferno'
     )
     fig_rutas2.update_coloraxes(showscale=False)
     st.plotly_chart(fig_rutas2, width=1200)
