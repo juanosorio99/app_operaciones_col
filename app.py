@@ -60,42 +60,41 @@ with col2:
 with col3:
     st.metric('Máximo', f'{maximo:.0f}', border=True)
 
-col4, col5 = st.columns(2)
 
-with col4:
- fig_barras = px.bar(
-    df_top5_ops_aeropuerto,
-    x='AEROPUERTO_OPERACION',
-    y='count',
-    title='Top 5 Aeropuertos con Mayor Número de Operaciones',
-    labels={
-        'AEROPUERTO_OPERACION': 'Aeropuerto',
-        'count': 'Número de Operaciones'
-    },
-    color='AEROPUERTO_OPERACION',
-    color_discrete_sequence=paleta_barras
-)
-fig_barras.update_layout(showlegend=False)
+with st.container(border=True): 
+    col4, col5 = st.columns(2)
 
-st.plotly_chart(fig_barras, use_container_width=True)
+    with col4:
+        fig_barras = px.bar(
+        df_top5_ops_aeropuerto,
+        x='AEROPUERTO_OPERACION',
+        y='count',
+        title='Top 5 Aeropuertos con Mayor Número de Operaciones',
+        labels={
+            'AEROPUERTO_OPERACION': 'Aeropuerto',
+            'count': 'Número de Operaciones'
+        },
+        color='AEROPUERTO_OPERACION',
+        color_discrete_sequence=paleta_barras
+    )
+    fig_barras.update_layout(showlegend=False)
 
-
-
-#_________________________
-# ANÁLISIS DE RUTAS
-with col4:
-    fig_rutas = px.bar(
-    df_top10_rutas.sort_values('CANTIDAD', ascending=True),
-    x='CANTIDAD',
-    y='RUTA',
-    orientation='h',
-    title='TOP 10 RUTAS',
-    labels={'CANTIDAD': 'Cantidad de Operaciones', 'RUTA': 'Rutas'},
-    color='CANTIDAD',
-    color_continuous_scale='tealgrn'
-)
-fig_rutas.update_coloraxes(showscale=False)
-st.plotly_chart(fig_rutas, use_container_width=True)
+    st.plotly_chart(fig_barras, use_container_width=True)
+    #_________________________
+    # ANÁLISIS DE RUTAS
+    with col4:
+        fig_rutas = px.bar(
+        df_top10_rutas.sort_values('CANTIDAD', ascending=True),
+        x='CANTIDAD',
+        y='RUTA',
+        orientation='h',
+        title='TOP 10 RUTAS',
+        labels={'CANTIDAD': 'Cantidad de Operaciones', 'RUTA': 'Rutas'},
+        color='CANTIDAD',
+        color_continuous_scale='tealgrn'
+    )
+    fig_rutas.update_coloraxes(showscale=False)
+    st.plotly_chart(fig_rutas, use_container_width=True)
 
 with st.expander('Ver Matriz de Datos'):
     st.dataframe(df)
