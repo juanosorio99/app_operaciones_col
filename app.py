@@ -119,4 +119,4 @@ with tab2:
         color_continuous_scale='tealgrn'
     )
     fig_rutas2.update_coloraxes(showscale=False)
-    st.plotly_chart(fig_rutas2, use_container_width=True)
+    st.plotly_chart(fig_rutas2, width=1200)
