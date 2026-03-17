@@ -22,6 +22,7 @@ df['RUTA'] = df['ORIGEN'] + ' ▶️ ' + df['DESTINO']
 df_top10_rutas = df['RUTA'].value_counts().reset_index().head(10)
 df_top10_rutas2 = df['RUTA'].value_counts().reset_index().head(10)
 df_top10_rutas.columns = ['RUTA', 'CANTIDAD']
+df_top10_rutas2.columns = ['RUTA', 'CANTIDAD']
 
 ###############################################################################
 #                      CONFIGURACIÓN GENERAL DE LA APLICACIÓN                 #
