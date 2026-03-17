@@ -105,3 +105,16 @@ tab1, tab2 = st.tabs(['Matriz de datos', 'Grafica de Barras'])
 
 with tab1:
     st.dataframe(df)
+with tab2:
+    fig_rutas2 = px.bar(
+        df_top10_rutas.sort_values('CANTIDAD', ascending=True),
+        x='CANTIDAD',
+        y='RUTA',
+        orientation='h',
+        title='TOP 10 RUTAS',
+        labels={'CANTIDAD': 'Cantidad de Operaciones', 'RUTA': 'Rutas'},
+        color='CANTIDAD',
+        color_continuous_scale='tealgrn'
+    )
+    fig_rutas2.update_coloraxes(showscale=False)
+    st.plotly_chart(fig_rutas2, use_container_width=True)
