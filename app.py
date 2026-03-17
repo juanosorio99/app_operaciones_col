@@ -102,3 +102,6 @@ with st.expander('Ver Matriz de Datos'):
     st.dataframe(df)
 
 tab1, tab2 = st.tabs(['Matriz de datos', 'Grafica de Barras'])
+
+with tab1:
+    st.dataframe(df)
