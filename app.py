@@ -40,6 +40,9 @@ st.set_page_config(
 st.markdown(
     '''
     <style>
+        .st-emotion-cache-rsr9ey{
+            color: skyblue;
+        }
         .block-container {
             max-width: 1200px;
         }
