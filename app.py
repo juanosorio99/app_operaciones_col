@@ -44,7 +44,7 @@ st.markdown(
             color: skyblue;
         }
         .st-c2 {
-            color: skyblue;
+            background-color: skyblue;
         }
         .block-container {
             max-width: 1200px;
