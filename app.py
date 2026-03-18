@@ -40,7 +40,10 @@ st.set_page_config(
 st.markdown(
     '''
     <style>
-        .st-emotion-cache-rsr9ey{
+        .st-emotion-cache-rsr9ey {
+            color: skyblue;
+        }
+        .st-c2 {
             color: skyblue;
         }
         .block-container {
